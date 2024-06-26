@@ -1,0 +1,12 @@
+deployment: 
+  replicaCount: 2 
+  image: evgeniy91/fixit:latest 
+  containerPort: 8080 
+  app: fixit 
+
+service: 
+  type: NodePort 
+  port: 8080 
+  targetPort: 8080 
+  nodePort: 30088
+  app: fixit

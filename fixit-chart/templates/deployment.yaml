@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "fixit-chart.fullname" . }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.app  }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.deployment.image }}
+          ports:
+            - containerPort: {{ .Values.deployment.containerPort }}
