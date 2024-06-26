@@ -1,5 +1,5 @@
 deployment: 
-  replicaCount: 2 
+  replicaCount: 4 
   image: evgeniy91/fixit:latest 
   containerPort: 8080 
   app: fixit 
